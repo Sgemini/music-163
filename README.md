@@ -19,3 +19,6 @@ npm run build --report
 ```
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+http://s2.music.126.net/style/web2/img/frame/topbar.png?0507b9b7f40553706f853bcaf2141ab4  网易云Logo
+no-repeat 0 9999px position
