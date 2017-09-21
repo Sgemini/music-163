@@ -4,12 +4,12 @@
       <nav class='m-nav'>
         <a href="/#/" class='logo'></a>
         <ul>
-          <li class='m-nav-item'>发现音乐</li>
-          <li class='m-nav-item'>我的音乐</li>
-          <li class='m-nav-item'>朋友</li>
-          <li class='m-nav-item'>商城</li>
-          <li class='m-nav-item'>音乐人</li>
-          <li class='m-nav-item'>下载客户端</li>
+          <li class='m-nav-item'><a href="/#/" class='m-item-link active'>发现音乐</a></li>
+          <li class='m-nav-item'><a href="" class='m-item-link'>我的音乐</a></li>
+          <li class='m-nav-item'><a href="" class='m-item-link'>朋友</a></li>
+          <li class='m-nav-item'><a href="" class='m-item-link'>商城</a></li>
+          <li class='m-nav-item'><a href="" class='m-item-link'>音乐人</a></li>
+          <li class='m-nav-item'><a href="" class='m-item-link'>下载客户端</a></li>
         </ul>
       </nav>
       <nav class='s-nav'></nav>
@@ -18,13 +18,18 @@
 </template>
 
 <script>
-export default {
-  data () {
-    return {
-      
+  export default {
+    data () {
+      return {
+        
+      }
+    },
+    methods: {
+      changActive: function() {
+        let item = document.getElementsByClass('active');
+      }
     }
   }
-}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -46,8 +51,18 @@ export default {
   }
   .m-nav .m-nav-item {
     display: inline-flex;
-    align-items: center;
     height: 70px;
-    color: white;
+  }
+  
+  .m-nav .m-item-link {
+    float: left;
+    height: 70px;
+    padding: 0 19px;
+    line-height: 70px;
+    color: #ccc;
+  }
+  .active {
+    background: #000;
+    color: #fff !important;
   }
 </style>

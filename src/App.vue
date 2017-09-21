@@ -11,6 +11,7 @@ export default {
 </script>
 
 <style>
-#app {
-}
+  a:hover {
+    text-decoration: none;
+  }
 </style>
