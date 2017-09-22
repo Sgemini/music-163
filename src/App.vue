@@ -14,4 +14,7 @@ export default {
   a:hover {
     text-decoration: none;
   }
+  .hidden {
+    display: none;
+  }
 </style>
