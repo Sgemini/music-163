@@ -4,13 +4,13 @@
       <nav class='m-nav'>
         <a href="/#/" class='logo'></a>
         <ul class="m-nav-bar">
-          <li class='m-nav-item'><a href="/#/" class='m-item-link active'>发现音乐</a></li>
-          <li class='m-nav-item'><a href="/#/" class='m-item-link'>我的音乐</a></li>
-          <li class='m-nav-item'><a href="/#/" class='m-item-link'>朋友</a></li>
-          <li class='m-nav-item'><a href="/#/" class='m-item-link'>商城</a></li>
-          <li class='m-nav-item'><a href="/#/" class='m-item-link'>音乐人</a></li>
+          <li class='m-nav-item'><a href="/#/" class='m-item-link active' @click="changActive">发现音乐</a></li>
+          <li class='m-nav-item'><a href="/#/" class='m-item-link' @click="changActive">我的音乐</a></li>
+          <li class='m-nav-item'><a href="/#/" class='m-item-link' @click="changActive">朋友</a></li>
+          <li class='m-nav-item'><a href="/#/" class='m-item-link' @click="changActive">商城</a></li>
+          <li class='m-nav-item'><a href="/#/" class='m-item-link' @click="changActive">音乐人</a></li>
           <li class='m-nav-item'>
-            <a href="" class='m-item-link'>下载客户端</a>
+            <a href="/#/" class='m-item-link' @click="changActive">下载客户端</a>
             <span class='hot'>HOT</span>
           </li>
         </ul>
@@ -55,8 +55,14 @@
       }
     },
     methods: {
-      changActive: function() {
-        let item = document.getElementsByClassName('active');
+      changActive: function(e) {
+        let item = document.getElementsByClassName('active')[0];
+        item.className = item.className.replace(' active', '');
+        e.target.className = e.target.className + ' active';
+        let triangle = document.createElement('div');
+        triangle.setAttribute('id', 'triangle-up');
+        e.target.appendChild(triangle);
+        console.log(triangle)
       },
       showLoginBar: function() {
         let bar = document.getElementsByClassName('login-bar')[0];
@@ -76,7 +82,7 @@
   .nav-bar {
     background-color: #242424;
   }
-  .m-nav {
+  .m-nav, .s-nav {
     width: 1200px;
     margin: 0 auto;
   }
@@ -95,6 +101,7 @@
     display: inline-block;
   }
   .m-nav .m-item-link {
+    position: relative;
     float: left;
     height: 70px;
     padding: 0 19px;
@@ -103,7 +110,8 @@
     font-size: 14px;
   }
   .active {
-    background: #000;
+    background: #000 url('http://s2.music.126.net/style/web2/img/frame/topbar.png?0507b9b7f40553706f853bcaf2141ab4') no-repeat;
+    background-position: -226px 0;
     color: #fff !important;
   }
   .hot {
@@ -176,4 +184,12 @@
   .qq { background-position: -20px -40px; }
   .sina { background-position: 0 -22px; }
   .m-163 { background-position: 0 -42px; }
+  .triangle-up {
+  }
+
+
+  .s-nav {
+    height: 35px;
+    background: #C20C0C;
+  }
 </style>
